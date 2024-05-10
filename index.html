@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día Mamá</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        
+        #envelope {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            background-color: #ffffff;
+            border: 4px solid #ff69b4;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+
+        #envelope:hover {
+            transform: scale(1.05);
+            border-color: #ff1493;
+        }
+        
+        #message {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 15px;
+            padding: 20px;
+            transition: opacity 0.5s ease-in-out;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #message.active {
+            display: block;
+            opacity: 1;
+        }
+
+        #message img {
+            max-width: 100%;
+            max-height: 50%;
+            margin-bottom: 20px;
+        }
+
+        #textArea {
+            width: 80%;
+            height: 100px;
+            resize: none;
+            border: none;
+            outline: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin: 0 auto;
+            pointer-events: none; /* para hacerlo de solo lectura */
+        }
+        
+        #heart {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 24px;
+            color: #ff1493;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body background="uwu.png">
+
+<div id="envelope">
+    <p>Feliz Día Mamita</p>
+    <span id="heart">&#10084;</span>
+</div>
+
+<div id="message">
+    <img src="hola.png.jpg" alt="Imagen de felicitación">
+    <textarea id="textArea" readonly>Mamita, aprovechando que ya se hacer paginas web, decidi hacer esta xD Espero te guste, y nomas es para desearte Feliz dia de las Madres uwu Te amo mucho, eres la mejor mama del mundo :)</textarea>
+</div>
+
+<script>
+    const envelope = document.getElementById("envelope");
+    const message = document.getElementById("message");
+
+    envelope.addEventListener("click", function() {
+        message.classList.add("active");
+    });
+</script>
+
+</body>
+</html>
